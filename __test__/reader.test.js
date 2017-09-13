@@ -4,7 +4,7 @@ const reader = require('../lib/reader.js');
 
 describe('reader', () => {
   test('an invalid path should reject an error', (done) => {
-    reader([`${__dirname}/assets/pets.txt`,`${__dirname}/assets/pets.txt`,`${__dirname}/assets/pets.txt`], (err, data) => {
+    reader.read([`${__dirname}/assets/pets.txt`,`${__dirname}/assets/pets.txt`,`${__dirname}/assets/pets.txt`], (err, data) => {
       expect(err).not.toBe(null);
       expect(data).toBeUndefined();
       done();
@@ -12,7 +12,7 @@ describe('reader', () => {
   });
 
   test('a valid path should resolve a lowercased string', (done) => {
-    reader([`${__dirname}/assets/horses.txt`,`${__dirname}/assets/cats.txt`,`${__dirname}/assets/dogs.txt`], (err, data) => {
+    reader.read([`${__dirname}/assets/horses.txt`,`${__dirname}/assets/cats.txt`,`${__dirname}/assets/dogs.txt`], (err, data) => {
 
       expect(err).toBeNull();
       expect(data).toEqual('animal\n');
