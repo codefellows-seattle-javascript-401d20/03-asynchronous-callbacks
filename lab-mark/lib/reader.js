@@ -5,11 +5,11 @@ const fs = require('fs');
 module.exports = (path, callback, returnData) => {
 
   if(!returnData)
-    returnData = '';
+    returnData = [];
 
   // No more paths... tell tests that it's done.
   if (path.length === 0) {
-    callback(null, `${returnData}`);
+    callback(null, returnData);
   }
 
   // More paths... call yoself
@@ -17,7 +17,9 @@ module.exports = (path, callback, returnData) => {
     fs.readFile(path[0], (err, data) => {
       if(err)
         return callback(err);
-      module.exports(path.slice(1), callback, `${returnData}${data.toString()}`);
+
+      returnData.push(data.toString());
+      module.exports(path.slice(1), callback, returnData);
     });
   }
 };
