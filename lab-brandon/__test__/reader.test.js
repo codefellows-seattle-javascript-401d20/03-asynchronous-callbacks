@@ -13,7 +13,7 @@ describe('reader', () => {
   test('a valid path should take in an array of paths', (done) => {
     reader([`${__dirname}/assets/file.txt`,`${__dirname}/assets/anotherfile.txt`,`${__dirname}/assets/uhm.txt`], (err, data) => {
       expect(err).toBeNull();
-      expect(data).toEqual('[1,2,3]\n');
+      expect(data).toEqual('[1,2,3]\n', '[1,2,3]\n','[1,2,3]\n');
       done();
     });
   });
