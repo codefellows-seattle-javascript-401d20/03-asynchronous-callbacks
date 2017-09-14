@@ -2,9 +2,8 @@
 
 const reader = require('./lib/reader');
 
-const path = ['./assets/foo.txt', './assets/bar.txt', './assets/hi.txt' ];
-
-reader(path, (err, data) => {
-  if (err) return console.error(err);
-  console.log(data);
+reader(process.argv.slice(2), (err, data) => {
+  if (err) 
+    return console.log('USAGE ERROR: something went wrong');
+  console.log(data.join('\n'));
 });
