@@ -15,7 +15,7 @@ describe('reader', () => {
     reader.read([`${__dirname}/assets/horses.txt`,`${__dirname}/assets/cats.txt`,`${__dirname}/assets/dogs.txt`], (err, data) => {
 
       expect(err).toBeNull();
-      expect(data).toEqual('animal\n');
+      expect(data).toEqual([ 'animal\n', 'animaler\n', 'animalest\n' ]);
       done();
     });
   });
