@@ -1,11 +1,10 @@
 'use strict';
 
-const fs = require('fs');
 const reader = require('./lib/reader');
 
-const path = process.argv;
+const path = ['./assets/foo.txt', './assets/bar.txt', './assets/bar.txt', './assets/bar.txt'];
 
-reader(path[2], (err, data) => {
+reader(path, (err, data) => {
   if (err) return console.error(err);
   console.log(data);
 });
