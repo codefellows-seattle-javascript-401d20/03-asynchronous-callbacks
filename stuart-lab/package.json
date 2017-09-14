@@ -1,0 +1,18 @@
+{
+  "name": "stuart-lab",
+  "version": "1.0.0",
+  "description": "Contains one module 'fp' with methods 'map', 'filter', 'reduce', 'concat', 'slice'. There are tests for these in __test__. These ensure that parameters are appropriate, or return messages to indicate if not.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --coverage -i"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^21.0.2"
+  }
+}
