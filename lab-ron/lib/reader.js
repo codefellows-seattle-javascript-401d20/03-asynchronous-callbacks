@@ -16,5 +16,3 @@ module.exports = (path, callback) => {
   };
   loopFiles(0);
 };
-
-

@@ -21,15 +21,14 @@ describe('#reader', () => {
   });
 
   test(`valid path resolves in the path's name two value`, (done) => {
-    reader([`${__dirname}/../assets/bar.txt`, `${__dirname}/../assets/bar.txt`],
+    reader([`${__dirname}/../assets/foo.txt`, `${__dirname}/../assets/bar.txt`],
     (err, data) => {
       console.log(data);
       expect(err).toBeNull();
-      expect(data).toEqual('bar\nbar\n');
+      expect(data).toEqual('foo\n','bar\n');
       done();
     });
   });
-
 
 });
 
