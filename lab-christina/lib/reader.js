@@ -2,10 +2,12 @@
 
 const fs = require('fs');
 module.exports = (path, callback) => {
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      callback(err);
-    }
-    console.log('something', data.string());
-  });
+  for(var i = 0; i < path.length; i++){
+    fs.readFile(path, (err, data) => {
+      if (err) {
+        callback(err);
+      }
+      console.log(data);
+    });
+  }
 };

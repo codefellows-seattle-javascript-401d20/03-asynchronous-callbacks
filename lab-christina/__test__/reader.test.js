@@ -11,7 +11,7 @@ describe('reader', () => {
     });
   });
   test('a valid path should resolve in a string', (done) => {
-    reader([`${__dirname}/asset/betcha.txt`,`${__dirname}/asset/data.txt`,`${__dirname}/asset/betcha.txt`],(err, data) => {
+    reader([`${__dirname}/asset/betcha.txt`,`${__dirname}/asset/data.txt`, `${__dirname}/asset/lastly.txt`], (err, data) => {
       expect(err).toBeNull();
       expect(data).toEqual('words', 'for', 'food');
       done();
