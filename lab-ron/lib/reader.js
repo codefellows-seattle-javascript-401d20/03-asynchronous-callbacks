@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 module.exports = (path, callback) => {
-
+  console.log( path);
   let loopFiles = (num) => {
     if (num >= path.length) return;
     else {
