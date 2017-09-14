@@ -5,6 +5,7 @@
 #### Reader Module
 The reader module exports a single function. It takes an array of three file paths and resolves a mapped array of strings loaded from each file using an error-first callback. The string data should be in the same order as the file path data (mapped). If an error occurs it should immediately reject the error using the callback and stop execution.
 
-* The reader module should have the function signature `(paths, callback) => undefined`
-* On a failure the reader module should invoke the callback with an error `callback(error)`
-* On success the reader module should invoke the callback with null as the first paramiter, and the result as the second paramiter `callback(null, result)`
+* The reader module's read function has an arity of one.
+* The expected data for each parameter is an array holding strings representing file paths.`
+* On a failure, it should invoke the callback with an error `callback(error)`
+* On success, it should invoke the callback with null as the first paramiter, and the result as the second paramiter `callback(null, result)`
