@@ -2,17 +2,22 @@
 
 const fs = require('fs');
 
-module.exports = (path, callback) => {
-  console.log( path);
+module.exports = (paths, callback) => {
+  console.log(paths);
+  let result = [];
+
   let loopFiles = (num) => {
-    if (num >= path.length) return;
-    else {
-      fs.readFile(path[num], (err, data) => {
-        if (err) return callback(err);
-        callback(null, data.toString());
-        loopFiles(num + 1);
-      });
-    }
+    if (num === paths.length) 
+      return callback(null, result);
+    fs.readFile(paths[num], (err, data) => {
+      if (err) 
+        return callback(err);
+      result.push(data.toString());
+      loopFiles(num + 1);
+    });
   };
+
   loopFiles(0);
-};
+};  
+
+

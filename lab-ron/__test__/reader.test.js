@@ -4,30 +4,30 @@ const reader = require('../lib/reader.js');
 
 describe('#reader', () => {
   test(`invalid path should reject an error`, (done) => {
-    reader(`${__dirname}/../assets/foo2.txt`, (err, data) => {
+    reader([`${__dirname}/../assets/foo2.txt`], (err, data) => {
       expect(err).not.toBeNull();
-      expect(data).toBeUndefined()
-      done()
+      expect(data).toBeUndefined();
+      done();
     });
   });
 
-  test(`valid path resolves in the path's name one value`, (done) => {
+  test(`valid path resolves a maped array of the file data`, (done) => {
     reader([`${__dirname}/../assets/foo.txt`], (err, data) => {
       expect(err).toBeNull();
-      expect(data).toEqual('foo\n');
-      console.log(data)
+      expect(data).toEqual(['foo\n']);
+      console.log(data);
       done();
     });
   });
 
   test(`valid path resolves in the path's name two value`, (done) => {
     reader([`${__dirname}/../assets/foo.txt`, `${__dirname}/../assets/bar.txt`],
-    (err, data) => {
-      console.log(data);
-      expect(err).toBeNull();
-      expect(data).toEqual('foo\n','bar\n');
-      done();
-    });
+      (err, data) => {
+        console.log(data);
+        expect(err).toBeNull();
+        expect(data).toEqual(['foo\n', 'bar\n']);
+        done();
+      });
   });
 
 });
