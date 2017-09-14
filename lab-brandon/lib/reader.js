@@ -1,3 +1,4 @@
+'use strict';
 const fs = require('fs');
 
 module.exports = (paths, callback) => {
@@ -9,8 +10,3 @@ module.exports = (paths, callback) => {
     });
   }
 };
-
-//———((null because the first callback is err and we gotta tell it that it’s all good))
-// module.exports = (cb, ctx) => {
-//
-// }
