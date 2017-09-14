@@ -1,7 +1,7 @@
 {
   "name": "lab-ron",
   "version": "0.0.1",
-  "description": "Lab 2 of 401",
+  "description": "Lab 3 of 401",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -14,6 +14,6 @@
     "test-watch": "jest --watch -i"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Ron Barrantes",
+  "license": "MIT"
 }
