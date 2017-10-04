@@ -12,7 +12,7 @@ describe('reader', () => {
   test('a valid path should resolve in an array of strings', (done) => {
     reader([`${__dirname}/asset/betcha.txt`,`${__dirname}/asset/data.txt`, `${__dirname}/asset/lastly.txt`], (err, data) => {
       expect(err).toBeNull();
-      expect(data).toEqual(['words', 'for', 'food']);
+      expect(data).toEqual(['words\n', 'for\n', 'food\n']);
       done();
     });
   });

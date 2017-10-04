@@ -5,21 +5,24 @@ const fs = require('fs');
 
 module.exports = (filepath, callback) => {
   let pathArray = [];
-  for(let i = 0; i < filepath.length; i++){
-    fs.readFile(filepath[i], 'utf-8', (err, data) => {
+  fs.readFile(filepath[0], 'utf-8', (err, data) => {
+    if (err) {
+      return callback(err);
+    }
+    pathArray[2] = (data);
+    fs.readFile(filepath[1], 'utf-8', (err, data) => {
       if (err) {
         return callback(err);
       }
-      if(pathArray <= 3)
-        pathArray[i] = (data);
-      pathArray[i] + 1;
-      console.log(data);
-      if(pathArray === 3)
-        callback(null, data);
+      pathArray[1] = (data);
+      fs.readFile(filepath[2], 'utf-8', (err, data) => {
+        if (err) {
+          return callback(err);
+        }
+        pathArray[0] = (data);
+        console.log(pathArray);
+        callback(null, pathArray);
+      });
     });
-  }
+  });
 };
-
-/* module.exports = (filepath, callback) => {
-
-*/
